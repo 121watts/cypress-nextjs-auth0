@@ -1,6 +1,10 @@
+type Credentials = {
+  username: string
+  password?: string
+}
 declare namespace Cypress {
   interface Chainable<Subject = any> {
-    login(): Chainable<Element>;
+    login(credentials?: Credentials): Chainable<Element>;
     logout(): Chainable<Element>;
   }
 }
